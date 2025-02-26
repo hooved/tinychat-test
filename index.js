@@ -1,4 +1,4 @@
-window.TINYCHAT_ROOT = "/";
+window.TINYCHAT_ROOT = "/tinychat-test/";
 const queryParams = new URLSearchParams(window.location.search);
 const normalizedParams = Object.fromEntries([...queryParams].map(([key, value]) => [key.toUpperCase(), value.toUpperCase()]));
 window.BACKEND = (normalizedParams["BACKEND"] === "WASM") ? "WASM" : "WebGPU";
@@ -7,10 +7,10 @@ const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 window.isMobile = isMobileAgent || hasTouchScreen;
 if (window.isMobile) document.documentElement.classList.add('mobile'); // prevent annoying auto-zoom when entering prompt on mobile
 // MODEL_BASE_URL is where the weights are hosted, WEBGPU_EXPORT is the JS-wrapped WebGPU code exported from tinygrad
-window.PC_MODEL_BASE_URL = ".";
+window.PC_MODEL_BASE_URL = "https://huggingface.co/datasets/hooved/llama-3-2-1B-f32/resolve/main/test";
 window.PC_WEBGPU_EXPORT = './net.js'
 window.PC_MAX_CONTEXT = 1024;
-window.MOBILE_MODEL_BASE_URL = ".";
+window.MOBILE_MODEL_BASE_URL = "https://huggingface.co/datasets/hooved/llama-3-2-1B-f32/resolve/main/test";
 window.MOBILE_WEBGPU_EXPORT = './net.js'
 window.MOBILE_MAX_CONTEXT = 1024;
 
